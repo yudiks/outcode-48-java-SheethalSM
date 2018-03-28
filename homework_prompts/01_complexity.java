@@ -1,9 +1,8 @@
-/*
- * Homework 01 - Complexity
- */
-
 import java.util.*;
-import java.io.*;
+
+/*
+ * 01 - Complexity
+ */
 
 class Main {
   public static void main(String[] args) {
@@ -209,14 +208,14 @@ class Main {
   Auxiliary Space Complexity:
 
   */
-  public static int[] countingSort (int[] arr, int min, int max) {
+   public static int[] countingSort (int[] arr, int min, int max) {
     int[] count = new int[max - min + 1];
-    Arrays.fill(arr, 0);
+    Arrays.fill(count, 0);
     for(int i = 0; i < arr.length; i++) {
       count[arr[i] - min] = count[arr[i] - min] + 1;
     }
     int index = 0;
-    for(int i = 0; i < max + 1; i++) {
+    for(int i = min; i < max - min + 1; i++) {
       while(count[i - min] > 0) {
         arr[index] = i;
         index += 1;
@@ -488,14 +487,15 @@ class Main {
   public static int nthFibonacci(int n) {
     if(n < 2){ return n; }
 
-    int[] result = new int[n];
+    int[] result = new int[n+1];
     result[0] = 0;
     result[1] = 1;
 
-    for(int i = 2; i < n; i++) {
+    System.out.println(result);
+
+    for(int i = 2; i < n+1; i++) {
       result[i] = result[i-1] + result[i-2];
     }
-
     return result[n];
   }
 
