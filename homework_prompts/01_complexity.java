@@ -512,8 +512,9 @@ class Main {
    *  Auxiliary Space Complexity:
    */
   public static ArrayList<Integer> findAllDuplicates(int[] arr) {
-    //YOUR WORK HERE
+    // YOUR WORK HERE
     return null;
+
   }
 }
 
