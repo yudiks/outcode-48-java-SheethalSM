@@ -157,37 +157,6 @@ private static boolean binarySearch(int[] nums, int start, int end, int target) 
 
 
 /*
- * Kth Largest [Extra Credit]
- *
- * *Given a unsorted array and an integer k, find the kth largest element in the array*
- *
- * Read up on quickselect [here](https: *en.wikipedia.org/wiki/Quickselect).
- *
- * **Parameters**
- * Input: arr {Array of Integers}
- * Input: k {Integer}
- * Output: {Integer}
- *
- * **Constraints**
- * k < length of arr
- *
- * Time: O(N)
- * Space: O(N)
- *
- * **Examples**
- * `[1, 4, 2, 5, 12, 9], 3 --> 5`
- * `[4, 7, 1, 6], 1 --> 7`
- * `[6, 44, 2, 1, 9, 10, -1, 78, 90], 3 --> 44`
- */
-
-public static int kthLargest(int k, int[] arr) {
-  // YOUR WORK HERE
-  return -1;
-}
-
-
-
-/*
  * Multiplication Using Russian Peasant [Extra Credit]
  *
  * *Given two positive integers, return its product using Russian Peasant method of multiplication*
@@ -389,35 +358,6 @@ class Main {
 
     testCount[0] = 0;
     testCount[1] = 0;
-    System.out.println("Kth Largest Tests");
-
-    assertTest(testCount, "return correct value for 3rd largest value in the array", new Test() {
-      public boolean execute() {
-        int output = Problems.kthLargest(3, new int[] {1, 4, 2, 5, 12, 9});
-        return output == 5;
-      }
-    });
-
-    assertTest(testCount, "returns correct value for largest value in the array", new Test() {
-      public boolean execute() {
-        int output = Problems.kthLargest(1, new int[] {4, 7, 1, 6});
-        return output == 7;
-      }
-    });
-
-    assertTest(testCount, "returns correct value for smallest value in the array", new Test() {
-      public boolean execute() {
-        int output = Problems.kthLargest(9, new int[] {6, 44, 2, 1, 9, 10, -1, 78, 90});
-        return output == -1;
-      }
-    });
-
-    System.out.println("PASSED: " + testCount[0] + " / " + testCount[1] + "\n\n");
-
-
-
-    testCount[0] = 0;
-    testCount[1] = 0;
     System.out.println("Multiplication Russian Tests");
 
     assertTest(testCount, "returns correct value for two integers", new Test() {
@@ -428,9 +368,6 @@ class Main {
     });
 
     System.out.println("PASSED: " + testCount[0] + " / " + testCount[1] + "\n\n");
-
-
-
 
   }
 

@@ -1,23 +1,18 @@
-import java.util.*;
-
 /*
- * 01 - Complexity
- */
+ *  Homework 01 - Complexity
+ *
+ *  For the following functions, write the expected Time and Auxiliary Space
+ *  Complexity using what you know about nested loops, hash table look-ups and
+ *  the runtime of built in functions.
+ *
+ *  NOTE: You don't need to code to anything for these problems, just write
+ *  what you the complexity to be using big-O notation
+ **/
+
+import java.util.*;
 
 class Main {
   public static void main(String[] args) {
-    // Tests
-    // int[] arr1 = {0, 1, 2, 3};
-    // int[] arr2 = {4, 5, 6, 7};
-    // String test = "abc";
-    // System.out.println(indexOf(arr1, 4));
-    // System.out.println(evens(arr1));
-    // System.out.println(split(test));
-    // System.out.println(sum(arr1));
-    // System.out.println(merge(arr1, arr2));
-    // System.out.println(countingSort(arr1, 0, 3));
-    // System.out.println(binarySearch(arr2, 6));
-    // System.out.println(factorial(5));
   }
 
   /*  Order of Magnitude
@@ -36,10 +31,6 @@ class Main {
   10. 15002^N                 Answer:
   */
 
-  /**
-  For the following problems, write down the expected Time and Auxiliary Space
-  Complexity of the functions
-  **/
 
   /*  Index Of
 
