@@ -388,12 +388,12 @@ class Main {
  /**
   * Problem 6:
   *
-  *  Time Complexity:
-  *  Auxiliary Space Complexity:
+  *  Time Complexity:O(1)
+  *  Auxiliary Space Complexity:O(1)
   */
 
   public static void isThereCat(Map<String, String> map) {
-    while(map.get("cat") != null) {
+    while(map.get("cat") != null) {//O(1)
       System.out.println("There is a cat!");
       map.remove("cat");
     }
@@ -404,36 +404,36 @@ class Main {
  /**
   * Problem 7:
   *
-  *  Time Complexity:
-  *  Auxiliary Space Complexity:
+  *  Time Complexity: O(n)
+  *  Auxiliary Space Complexity:O(1)
   */
   public static int[] powerOfThrees(int n) {
-    int[] result = new int[3];
+    int[] result = new int[3]; //pre declared size of 3 so constant
     int count = 1;
     int temp = 1;
 
-    while(count <= 3) {
-      temp *= n;
+    while(count <= 3) { //const time
+      temp *= n; //n times const
       result[count-1] = temp;
       count++;
     }
 
-    return result;
+    return result;//const
   }
 
 
   /**
    * Problem 8:
    *
-   *  Time Complexity:
-   *  Auxiliary Space Complexity:
+   *  Time Complexity:O(n), n is len
+   *  Auxiliary Space Complexity: (1)
    */
-  public static boolean findDuplicate(int[] arr) {
+  public static boolean findDuplicate(int[] arr) {//O(n) input space so wont count in aux
     int len = arr.length;
     int currItem;
 
     for (int i = 0; i < len; i++) {
-      currItem = arr[i];
+      currItem = arr[i];//const
 
       for (int j = 0; j < len; j++) {
         if (j != i) {
@@ -451,16 +451,16 @@ class Main {
   /**
    * Problem 9:
    *
-   *  Time Complexity:
-   *  Auxiliary Space Complexity:
+   *  Time Complexity:O(n^2)
+   *  Auxiliary Space Complexity:O(n)
    */
-  public static ArrayList<Integer> intersectionPoints(int[] arr1, int[] arr2) {
-    ArrayList<Integer> results = new ArrayList<Integer>();
+  public static ArrayList<Integer> intersectionPoints(int[] arr1, int[] arr2) { //2n
+    ArrayList<Integer> results = new ArrayList<Integer>(); //O(n)
 
     for (int i = 0; i < arr1.length; i++) {
       for (int j = 0; j < arr2.length; j++) {
         if (arr1[i] == arr2[j]) {
-          results.add(arr1[i]);
+          results.add(arr1[i]); //const time
         }
       }
     }
@@ -472,20 +472,20 @@ class Main {
   /**
    *  Problem 10:
    *
-   *  Time Complexity:
-   *  Auxiliary Space Complexity:
+   *  Time Complexity:O(n)
+   *  Auxiliary Space Complexity: O(n)
    */
   public static int nthFibonacci(int n) {
     if(n < 2){ return n; }
 
-    int[] result = new int[n+1];
+    int[] result = new int[n+1]; //n space
     result[0] = 0;
     result[1] = 1;
 
     System.out.println(result);
 
     for(int i = 2; i < n+1; i++) {
-      result[i] = result[i-1] + result[i-2];
+      result[i] = result[i-1] + result[i-2];//const time??
     }
     return result[n];
   }
@@ -512,8 +512,8 @@ class Main {
 
 /* Nth Fibonacci
  *
- *  Time Complexity:
- *  Auxiliary Space Complexity:
+ *  Time Complexity:O(n)
+ *  Auxiliary Space Complexity: O(1)
  */
 class NthFib {
 
@@ -523,7 +523,7 @@ class NthFib {
   public static int compute(int n) {
     result = 0;
 
-    result = searchFib(n);
+    result = searchFib(n); //n
     return result;
   }
 
@@ -535,11 +535,11 @@ class NthFib {
     }
 
     if (cache.get(index) != null) {
-      return cache.get(index);
+      return cache.get(index);//const space
     }
 
-    solution = searchFib(index-1) + searchFib(index-2);
-    cache.put(index, solution);
+    solution = searchFib(index-1) + searchFib(index-2); //2n
+    cache.put(index, solution); //const space
     return solution;
   }
 
