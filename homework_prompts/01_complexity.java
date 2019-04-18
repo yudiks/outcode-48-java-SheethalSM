@@ -19,16 +19,16 @@ class Main {
 
   Reduce the following into it's Big-O order of magnitude.
 
-  1. 5 + N                    Answer:
-  2. N + N^2                  Answer:
-  3. 15N + 13N                Answer:
-  4. 10000                    Answer:
-  5. log(N) + 1               Answer:
-  6. log(N) * 3 + 14N + 3     Answer:
-  7. Nlog(N) + 3N^2           Answer:
-  8. N^3 + log(N^4)           Answer:
-  9. N! + 180000N^2           Answer:
-  10. 15002^N                 Answer:
+  1. 5 + N                    Answer:Linear O(N)
+  2. N + N^2                  Answer:Quadratic o(N^2)
+  3. 15N + 13N                Answer:Linear O(N)
+  4. 10000                    Answer: O(1) constant
+  5. log(N) + 1               Answer:Logarithmic O(logn)
+  6. log(N) * 3 + 14N + 3     Answer:Quasilinear O(nLogn)
+  7. Nlog(N) + 3N^2           Answer:O(N^2) Quadratic 
+  8. N^3 + log(N^4)           Answer: Polinomial where c is cubic, O(N^3)
+  9. N! + 180000N^2           Answer:Factorial O(N!)
+  10. 15002^N                 Answer:Exponential O(C^n) where c is 1500
   */
 
 
@@ -47,8 +47,8 @@ class Main {
   [9, 83, 74], 8 --> -1
   [6, 4, 7, 9, 7, 8, 2, 4, 3], 7 --> 2
 
-  Time Complexity:
-  Auxiliary Space Complexity:
+  Time Complexity:Linear O(n)
+  Auxiliary Space Complexity: n+1 =O(n)
 
   */
   public static int indexOf(int[] arr, int target) {
@@ -74,8 +74,8 @@ class Main {
   [9, 83, 74] --> [74]
   [6, 4, 7, 9, 7, 8, 2, 4, 3] --> [6, 4, 8, 2, 4]
 
-  Time Complexity:
-  Auxiliary Space Complexity:
+  Time Complexity:O(n)
+  Auxiliary Space Complexity:O(n)
 
   */
   public static ArrayList evens(int [] arr) {
@@ -102,8 +102,8 @@ class Main {
   'hello' --> ['h', 'e', 'l', 'l', 'o']
   'foo' --> ['f', 'o'. 'o']
 
-  Time Complexity:
-  Auxiliary Space Complexity:
+  Time Complexity:O(n)
+  Auxiliary Space Complexity: O(n)
 
   */
   public static ArrayList split(String str) {
@@ -128,8 +128,8 @@ class Main {
   [0, 1, -1] --> 0
   [] --> 0
 
-  Time Complexity:
-  Auxiliary Space Complexity:
+  Time Complexity:O(n)
+  Auxiliary Space Complexity:O(1)
 
   */
   public static int sum(int[] arr) {
@@ -155,8 +155,8 @@ class Main {
   [12, 25, 40], [20, 37, 45] --> [12, 20, 25, 37, 40, 45]
   [10, 13, 24], [12, 35] --> [10, 12, 13, 24, 35]
 
-  Time Complexity:
-  Auxiliary Space Complexity:
+  Time Complexity:O(n)
+  Auxiliary Space Complexity:2n
 
   */
   public static int[] merge(int[] arr1, int[] arr2) {
@@ -195,8 +195,8 @@ class Main {
   [8, 1, 3, 4, 6, 9] --> [1, 3, 4, 6, 8, 9]
   [4, 0, 1, 5, 6] --> [0, 1, 4, 5, 6]
 
-  Time Complexity:
-  Auxiliary Space Complexity:
+  Time Complexity:O(n)
+  Auxiliary Space Complexity: O(2n)
 
   */
    public static int[] countingSort (int[] arr, int min, int max) {
@@ -232,8 +232,8 @@ class Main {
   [5, 7, 10, 12, 14], 7 --> 1
   [2, 4, 8, 9, 15], 3 --> -1
 
-  Time Complexity:
-  Auxiliary Space Complexity:
+  Time Complexity:O(logn)
+  Auxiliary Space Complexity:O(1)
 
   */
   public static int binarySearch(int[] arr, int val) {
@@ -269,8 +269,8 @@ class Main {
   1 --> 1 (1)
   9 --> 362880 (9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1)
 
-  Time Complexity:
-  Auxiliary Space Complexity:
+  Time Complexity:O(n!)
+  Auxiliary Space Complexity:O(1)
 
   */
   public static int factorial(int n) {
@@ -283,8 +283,8 @@ class Main {
 
  /*  First Times Last
   *
-  *  Time Complexity:
-  *  Auxiliary Space Complexity:
+  *  Time Complexity:O(1)
+  *  Auxiliary Space Complexity: O(1)
   */
   public static int firstTimesLast(int[] arr) {
     int result = 0;
@@ -299,8 +299,8 @@ class Main {
 
   /*  Most Frequent Occurrence
    *
-   *  Time Complexity:
-   *  Auxiliary Space Complexity:
+   *  Time Complexity:O(n)
+   *  Auxiliary Space Complexity:O(1)
    */
   public static char mostFrequentOccurrence(String str) {
     String lowerString = str.toLowerCase();
@@ -331,8 +331,8 @@ class Main {
 
   /* Print Unordered Pairs
    *
-   *  Time Complexity:
-   *  Auxiliary Space Complexity:
+   *  Time Complexity:O(n^2)
+   *  Auxiliary Space Complexity:O(1)
    */
   public static void printUnorderedPairs(int[] arr) {
    for (int i = 0; i < arr.length; i++) {
@@ -370,8 +370,8 @@ class Main {
 
   /**
    *  Problem 5
-   *  Time Complexity:
-   *  Auxiliary Space Complexity:
+   *  Time Complexity:O(n^2)
+   *  Auxiliary Space Complexity:O(n^2)
    */
   public static int[][] makeCombinedMatrix(int[] arr1, int[] arr2) {
     int[][] result = new int[arr1.length][arr2.length];
