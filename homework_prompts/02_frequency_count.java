@@ -68,13 +68,22 @@ class Problems {
 
     public static HashMap wordCount(String sentence) {
       // YOUR WORK HERE
-      HashMap<String,Integer> wordCount = new HashMap<String,Integer>();
+      HashMap<String,Integer> wordCount = new HashMap<>();
        
-       String[] arr  = new String[sentence.length]
+       String[] arr  = sentence.split(" "); 
         String eachword=""; 
-      sentence.split(" "); 
-      for(String word: sentence)//each split part is a word
-      return new HashMap<String, Integer>();
+      for(eachword: arr)
+      {
+        if(wordCount.contains(eachword))
+        {
+          wordCount.put(eachword, eachword.getValue+1); //add one to the hashvalue 
+        }
+         if(!(wordCount.contains(eachword)))
+        {
+          wordCount.put(eachword, 1); //add one to the hashvalue 
+        }
+        
+      return wordCount;
     }
 
   /**
