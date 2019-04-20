@@ -29,9 +29,27 @@ class Problems {
  * `[0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1] --> 7`
  */
 
+  //keep counter for 1
   public static int numberOfOnes(int[] arr) {
     // YOUR WORK HERE
-    return -1;
+    int x =1;
+    if((arr.contains(x) && arr.length>=1)
+    int low=0;
+    int end=arr.length -1;
+    int count=0;
+    while(low<=end)
+    {
+      int mid=(low+end)/2;
+      if(A[mid]==x) {count = mid;
+        end =mid-1; }//x is the elem to be searched for so 1
+      else if(x<A[mid]) 
+      {end =mid-1;}
+      else {
+          low=mid+1;     
+      }
+      
+    }
+    return arr.length - mid;
   }
 
 /*
