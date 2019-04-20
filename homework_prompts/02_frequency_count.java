@@ -28,9 +28,16 @@ class Problems {
    * [1, 1, 2, 2, 3, 3]' --> [1, 2, 3]
    * [1, 2, 3, 1, 2] --> [1, 2, 3]
    */
+  //counter for everythign new and if seen before move to next
 
    public static ArrayList unique(int[] arr) {
       // YOUR WORK HERE
+     ArrayList<Integer> list= new ArrayList<Integer>();
+    
+     for(int i=0;i<arr.length;i++)
+     {
+        if(arr.contains(i)>1){ arr.append(i);}
+     }
       return new ArrayList<>();
    }
 
@@ -61,6 +68,12 @@ class Problems {
 
     public static HashMap wordCount(String sentence) {
       // YOUR WORK HERE
+      HashMap<String,Integer> wordCount = new HashMap<String,Integer>();
+       
+       String[] arr  = new String[sentence.length]
+        String eachword=""; 
+      sentence.split(" "); 
+      for(String word: sentence)//each split part is a word
       return new HashMap<String, Integer>();
     }
 
