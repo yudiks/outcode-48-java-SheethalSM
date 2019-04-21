@@ -236,12 +236,54 @@ public static int greaterValues(int[] arr, int target) {
 
 public static boolean rotatedArraySearch(int[] nums, int target) {
   // YOUR WORK HERE
+  int start =0; 
+  int end = nums.length-1;
+  int mid = (start+end)/2;
+  if(target ==nums[mid])
+  {
+    return true;
+  }
+  if(target<nums[mid])
+  {
+    end = mid-1;
+  }
+  elseif(target>nums[mid])
+  {
+    start = mid+1;
+  }
+  if(target<nums[end] && target>nums[mid])
+  { 
+    start = mid+1;
+    end =nums.length-1;
+  }
+  if(target>nums[0] && target<nums[mid])
+  { 
+    start = 0;
+    end =mid;
+  }
   return false;
 }
 
-
+//i assume below algorithm is suppose to be recursive binary search Googled this recursive solution 
 private static boolean binarySearch(int[] nums, int start, int end, int target) {
   // YOUR WORK HERE
+  if (left>right)
+  {
+    return false;
+  }
+  int mid = (start+end)/2;
+  if(nums[mid] == target)
+  {
+    return true;
+  }
+  elseif(target<nums[mid])
+  {
+     return binarySearch(nums, start, target, mid-1)
+  }
+  else
+  {
+    return binarySearch(nums,target,mid+1, end)
+  }
   return false;
 }
 
