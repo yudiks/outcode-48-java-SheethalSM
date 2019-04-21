@@ -36,12 +36,11 @@ class Problems {
     if((arr.contains(x) && arr.length>=1)
     int low=0;
     int end=arr.length -1;
-    int count=0;
+    int count=-1;
     while(low<=end)
     {
       int mid=(low+end)/2;
-      if(A[mid]==x) {count = mid;
-        end =mid-1; }//x is the elem to be searched for so 1
+      if(A[mid]==x) {count = mid;}//x is the elem to be searched for so 1
       else if(x<A[mid]) 
       {end =mid-1;}
       else {
@@ -73,11 +72,44 @@ class Problems {
  * `[1, 2, 3], 8 --> 3`
  * `[1, 10, 22, 59, 67, 72, 100], 70 --> 72`
  */
-
+//pseudocode: the last nubmer after array is target and search through the array to find target -- and return return target --
+       //if target < mid, only search on left side, if target >mid search on right side
+       //note: array is sorted
 public static int closestValue(int[] arr, int target) {
   // YOUR WORK HERE
-  return -1;
+  int result =0;
+  int low=0;
+  int end= arr.length-1;
+  if(contains(arr,target) //in the case that array contains target
+  { result =target;
+  } 
+  if(target<arr[0])
+     {
+       result = arr[0];
+     }
+  int mid = (low+end)/2
+     if(target<mid)
+     {
+       end=mid-1;
+     }
+     elseif(target>mid)
+     {
+       low = mid+1;
+     }
+     else{
+        result = arr[mid];
+     }
+     
+      if((arr[low]-target) < (target-arr[high]))   //googled this part... i was not sure how to even come up with answer
+         {
+           result = arr[low];
+         }
+     else{
+          result = arr[end];
+     }
+  return result;
 }
+       
 
 
 /*
@@ -101,11 +133,33 @@ public static int closestValue(int[] arr, int target) {
  * `98 --> 9.899495`
  * `14856 --> 121.885192
  */
-
+//this alg I checked for perfect squares until 25
+ //find lowestprime factor of int, 
+    //figure how many times(count) prime factor will have to multiply to get to square..
+     //divide times count by 2 to get the root of the square
+ //or else BST 
+     //find middle, if mid*midd<n then go to the right side by increment by 1 and make itnew mid, else go to the left elems
 
 public static Double squareRoot(Double n) {
   // YOUR WORK HERE
-  return -1.0;
+  int result=0;
+  int low= 1;
+  int end = n;
+  int mid = (low+end)/2;
+  if(mid*mid = n)//perfect case
+  {
+    result =mid;
+  }
+  if(mid*mid<n)
+  {
+    low = mid+1
+      result = mid;
+  }
+  if(mid*mid>n)
+  { 
+    end = mid-1;
+  }
+  return result;
 }
 
 
@@ -133,7 +187,25 @@ public static Double squareRoot(Double n) {
 
 public static int greaterValues(int[] arr, int target) {
   // YOUR WORK HERE
-  return -1;
+  //are you asking for all values above target values in an array. 
+  int result=0;
+  int start=0;
+  int end= arr.length-1;
+  while(start<=end)
+  {
+    mid = (start+end)/2;
+    if(mid<target)
+    {
+      start=mid+1;
+    }
+    if(mid>target)
+    {
+      end = mid -1;
+    }
+    if(arr[mid] <= target && arr[mid+1] > target){
+      {  return end - mid;}
+  }
+  return result;
 }
 
 
