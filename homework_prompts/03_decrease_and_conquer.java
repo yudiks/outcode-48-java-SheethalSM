@@ -310,10 +310,30 @@ private static boolean binarySearch(int[] nums, int start, int end, int target) 
  * `734, 487 --> 357458`
  * `846, 908--> 768168`
  */
-
+/*pseudocode:
+divide a by 2 and dropping remainder for odd until you cant 
+multiply right by 2 how ever many times left has been divided.
+add every other mutiplication on the right
+*/
 public static int multiplicationRussianPeasant(int a, int b) {
   // YOUR WORK HERE
-  return -1;
+  int sum =0;
+  if(a!=0 || b!=0)
+  {
+    
+    if(a>=1)
+    {a = a/2
+     b = b*2
+      if(b%2 != 0)
+      {
+        sum = sum+a;//but how to show every other sum
+      }
+    }
+  }
+  else{
+  sum=0;}
+  
+  return sum;
 }
 
 }
