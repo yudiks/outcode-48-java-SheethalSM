@@ -22,11 +22,39 @@
  // Average Time Complexity:
  // Average Auxiliary Space Complexity:
  class Quicksort {
+  //this is shalini solution
 
    public static int[] compute(int[] input) {
      // YOUR CODE HERE
-     return new int[0];
+    divide(input, 0, input.length - 1); 
+     return input;
    }
+  public static void divide(int[] input, int start, int end) {
+
+     if (start >= end) return; 
+
+     int pivotIndex = end; 
+     int wallIndex = start; 
+
+     for (int i = start; i < end; i++) {
+        if (input[i] < input[pivotIndex]) {
+          swap(input, i, wallIndex); 
+          wallIndex++; 
+        }
+     }
+     swap(input, wallIndex, pivotIndex);  
+     divide(input, start, wallIndex - 1); 
+     divide(input, wallIndex + 1, end);      
+
+   }
+
+   public static void swap(int[] input, int index1, int index2) {
+     int temp = input[index1]; 
+     input[index1] = input[index2]; 
+     input[index2] = temp; 
+
+   }
+
 
  }
 
