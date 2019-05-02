@@ -99,6 +99,7 @@ class Problems {
 
   // Time Complexity:
   // Auxiliary Space Complexity:
+  //must do recursively
   public static ListNode reverse(ListNode node) {
     // YOUR WORK HERE
     return null;
@@ -127,6 +128,8 @@ class Problems {
 
   // Time Complexity:
   // Auxiliary Space Complexity:
+  //no generation of new linkedlist that is reversed. it is a singly linked list. 
+  //you dont just swap a and b you swap the references of the values(the position of node themselsves within the linked list)
   public static ListNode swap(ListNode head, int a, int b) {
     // YOUR WORK HERE
     return null;
@@ -138,6 +141,7 @@ class Problems {
   *
   *  Given an input of a ListNode, return true if the ListNode is in a circular
   *  linked list, and false if the linked list that terminates.
+  it must end in a cycle, or the whole thing is a cycle. there is not cycle if it is circular.
  */
   public static boolean isCircular(ListNode node){
     // YOUR WORK HERE
