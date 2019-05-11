@@ -62,6 +62,9 @@ class ListNode {
 
   public ListNode(int value){
     // YOUR WORK HERE
+      Listnode node = new ListNode<Integer>();
+    node.next =null;
+    node.value=1;//maybe?
   }
 }
 
