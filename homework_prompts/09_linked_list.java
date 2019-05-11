@@ -62,9 +62,7 @@ class ListNode {
 
   public ListNode(int value){
     // YOUR WORK HERE
-      Listnode node = new ListNode<Integer>();
-    node.next =null;
-    node.value=1;//maybe?
+    this.value = value;
   }
 }
 
@@ -74,24 +72,86 @@ class LinkedList {
   public ListNode head;
   public ListNode tail;
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity:O(1)
+  // Auxiliary Space Complexity:O(1)
   public void append(int value){
     // YOUR WORK HERE
+    insert(value,length);
   }
 
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity:O(N)
+  // Auxiliary Space Complexity:O(1)
+  //inserts value at sest index, head =0th index.
   public void insert(int value, int index){
     // YOUR WORK HERE
+    ListNode newNode = new ListNode(value);
+    if(index < 0 || index > length){
+      return;
+    }
+    if(length ==0)
+    {
+      head = newNode;
+      tail = newNode;
+    }
+    else if(index ==length)//insert to end/tail
+    {
+       tail.next = newNode;
+       tail = newNode;
+    }
+    else if(index ==0)
+    {
+      newNode.next = head;
+      head = newNode;
+    }
+    else{//insert at a specific index
+      ListNode prev = head;
+      for(int i=0;i<index-1;i++)
+      {
+          prev = prev.next;
+      }
+      newNode.next = prev.next;
+      prev.next = newNode;
+      
+    }
+    length++; 
   }
 
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity:O(n)
+  // Auxiliary Space Complexity:O(1)
+ // A method that removes a node at a specified index.
   public void delete(int index){
     // YOUR WORK HERE
+    if(index<0 || index>=length)
+    {
+      return;
+    }
+    if(length == 1)
+    {
+       head = null;
+       //head.next =null;
+       tail =null;
+    }
+    else if(index ==0)
+    {
+      head = head.next;
+
+    }
+    else{
+      ListNode prev = head;
+      for(int i=0;i<index-1; i++)
+      {
+        prev = prev.next;
+      }
+      prev.next= prev.next.next;
+      if(index == length-1)
+      {
+        tail = prev;
+        //tail.next =null;
+      }  
+    }
+    length --;
   }
 
 
@@ -99,6 +159,15 @@ class LinkedList {
   // Auxiliary Space Complexity:
   public boolean contains(int value){
     // YOUR WORK HERE
+     ListNode currentNode = head;
+     while(currentNode!=null)
+     {
+       if(currentNode.value == value)
+       {
+         return true;
+       }
+       currentNode = currentNode.next;
+     }
     return false;
   }
 }
